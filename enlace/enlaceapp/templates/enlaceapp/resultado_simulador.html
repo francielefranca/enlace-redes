@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado - Simulador</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'enlaceapp/css/styles.css' %}">
+</head>
+<body>
+    <h1>Resultados do Simulador de Enlace de Dados</h1>
+
+    <table class="enlace-frame">
+        <tr>
+            <th>Endereço de Destino (MAC)</th>
+            <th>Endereço de Origem (MAC)</th>
+            <th>Dados</th>
+            <th>Dados Hex</th>
+            <th>CRC</th>
+        </tr>
+        <tr>
+            <td>{{dest_mac}}</td>
+            <td>{{src_mac}}</td>
+            <td>{{input_text}}</td>
+            <td>{{encapsulated_frame}}</td>
+            <td>{{crc}}</td>
+        </tr>
+    </table>
+    <p>Retorne para a <a href="/">Home</a> ou retorne caso deseje colocar outro texto, <a href="simulador_enlace/">Simulador de Enlace de Dados</a></p>
+    <p>Acesse também: <a href="sobre/">Sobre</a> <a href="contato/">Contato</a></p>
+</body>
+</html>

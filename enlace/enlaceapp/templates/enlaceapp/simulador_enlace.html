@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulador - Enlace</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'enlaceapp/css/styles.css' %}">
+</head>
+<body>
+    <h1>Simulador de Enlace de Dados</h1>
+    <form method="POST" action="{% url 'enlaceapp:resultado_simulador' %}">
+        {% csrf_token %}
+        <br>
+        <p>O Simulador de Enlace de Dados permite explorar e entender os conceitos relacionados à camada de enlace de dados. Através desse simulador, você pode visualizar como os quadros são encapsulados, transmitidos e recebidos entre dispositivos conectados.</p>
+        <br>
+        <label for="input_text">Dados de Entrada:</label>
+        <input type="text" id="input_text" name="input_text" required>
+        <br>
+        <br>
+        <input type="submit" value="Enviar" class="form-submit-button">
+    </form>   
+</body>
+</html>

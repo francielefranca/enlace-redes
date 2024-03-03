@@ -1,0 +1,125 @@
+
+body {
+    width: 800px;
+    margin: 0 auto;
+    color: black;
+    background-color:floralwhite;
+    padding: 0px;
+    font-size: 70;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+    text-align: center;
+    color: #C62E65;
+    font-size: 70;
+    margin-block-start: 80px;
+}
+
+li {
+    color: #C62E65; 
+    font-weight: bold; 
+    font-style: italic; 
+}
+
+h2 {
+    color: #C62E65;
+    font-size: 70;
+}
+
+p {
+    text-align: justify;
+    font-size: 50;
+}
+
+/* Estilo para a tabela */
+.enlace-frame {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para os cabeçalhos da tabela */
+.enlace-frame th {
+    background-color: #f2f2f2;
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para as células da tabela */
+.enlace-frame td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para as células da primeira coluna (Endereço de Destino e Endereço de Origem) */
+.enlace-frame td:first-child {
+    font-weight: normal;
+}
+
+/* Estilo para a última célula (CRC) */
+.enlace-frame td:last-child {
+    font-weight: bold;
+    color: #C62E65;
+}
+
+.destaque {
+    color: #C62E65;
+    font-weight: bold;
+}
+
+.form-submit-button {
+    background: #C62E65; /* Rosa */
+    color: white;
+    border-style: outset;
+    border-color: #C62E65;
+    border-radius: 20px;
+    height: 40px;
+    width: 85px;
+    font: bold 15px arial, sans-serif;
+    text-shadow: none;
+}
+
+.form-submit-button:hover {
+    background: #d0044f; /* Rosa mais escuro */
+    color: white;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow: none;
+}
+
+img{
+    max-width:1000px;
+    max-height:500px;
+    width: auto;
+    height: auto;
+
+}
+
+a {
+    flex: 1;
+    text-decoration: none;
+    outline-color: transparent;
+    text-align: center;
+    line-height: 3;
+    color: black;
+  }
+  
+a:link,
+a:visited,
+a:focus {
+    background: lightpink;
+    color: black;
+}
+  
+a:hover {
+    background: pink;
+}
+  
+a:active {
+    background: purple;
+    color: white;
+}
