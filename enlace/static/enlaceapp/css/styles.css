@@ -65,6 +65,16 @@ p {
     color: #C62E65;
 }
 
+.graph-container {
+    display: flex;
+}
+
+.graph-container img {
+    width: 50%;
+    height: auto;
+    margin-left: 50px;
+}
+
 .destaque {
     color: #C62E65;
     font-weight: bold;

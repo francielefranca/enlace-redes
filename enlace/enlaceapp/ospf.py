@@ -81,11 +81,8 @@ class NetworkAnalyzer:
         pos = nx.spring_layout(min_path_graph)
         nx.draw(min_path_graph, pos, with_labels=True, node_size=800, font_size=10)
         plt.title("Caminho Mínimo")
-        #plt.show()
-
-        #salvando grafico
-        #plt.savefig("enlace/static/enlaceapp/images/graph_min.png")
         plt.savefig("C:/Users/franc/OneDrive/Área de Trabalho/enlace-redes/enlace/static/enlaceapp/images/graph_min.png")
+        plt.show()        
     
     def visualize_topology(self, graph=None):
       if graph is None:
@@ -100,40 +97,8 @@ class NetworkAnalyzer:
       nx.draw_networkx_edge_labels(graph, pos, edge_labels=edge_labels)
 
       plt.title("Topologia Completa")
-      #plt.show()
-
-      #salvando grafico
-      #plt.savefig("enlace/static/enlaceapp/images/graph_complet.png")
       plt.savefig("C:/Users/franc/OneDrive/Área de Trabalho/enlace-redes/enlace/static/enlaceapp/images/graph_complet.png")
-
-def links():
-    analyzer = NetworkAnalyzer()
-    # Adicione roteadores e links à topologia
-    analyzer.add_router("RouterA")
-    analyzer.add_router("RouterB")
-    analyzer.add_router("RouterC")
-    analyzer.add_router("RouterD") # Adicionando mais roteadores
-    analyzer.add_router("RouterE")
-    analyzer.add_router("RouterF")
-
-    # Adicione links com atributos adicionais
-    analyzer.add_link("RouterA", "RouterB", link_id=1, taxa_transmissao=1000, tamanho_max_quadro=1500, latencia=5, custo=1)
-    analyzer.add_link("RouterB", "RouterC", link_id=2, taxa_transmissao=500, tamanho_max_quadro=1000, latencia=3, custo=2)
-    analyzer.add_link("RouterA", "RouterC", link_id=3, taxa_transmissao=2000, tamanho_max_quadro=2000, latencia=8, custo=3)
-    analyzer.add_link("RouterB", "RouterD", link_id=4, taxa_transmissao=1000, tamanho_max_quadro=1500, latencia=5, custo=1)
-    analyzer.add_link("RouterD", "RouterE", link_id=5, taxa_transmissao=2000, tamanho_max_quadro=2000, latencia=8, custo=3)
-    analyzer.add_link("RouterC", "RouterF", link_id=6, taxa_transmissao=500, tamanho_max_quadro=1000, latencia=3, custo=2)
-    analyzer.add_link("RouterA", "RouterD", link_id=7, taxa_transmissao=1500, tamanho_max_quadro=2000, latencia=4, custo=2)
-    analyzer.add_link("RouterB", "RouterE", link_id=8, taxa_transmissao=2500, tamanho_max_quadro=2500, latencia=6, custo=1)
-    analyzer.add_link("RouterC", "RouterD", link_id=9, taxa_transmissao=800, tamanho_max_quadro=1800, latencia=7, custo=3)
-
-    # Simula uma falha de link
-    analyzer.simular_falha_link(2)
-
-    minimo = analyzer.run_ospf()
-    analyzer.visualize_topology()
-
-    return minimo
+      plt.show()  
 
 '''
 if __name__ == "__main__":
