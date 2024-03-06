@@ -21,6 +21,9 @@
 5. Entre na pasta que contém um arquivo chamado 'manage.py'
 6. Logo após, você poderá rodar o projeto com o comando:
   ```python manage.py runserver```
+7. Clique na url local. A página será aberta em seu navegador padrão.
+
+**SE DIVIRTA!**
 
 ## telas
 ![Captura de tela 2024-03-03 223226](https://github.com/francielefranca/enlace-redes/assets/92552849/7768f65f-0cb5-4e41-9d99-9c08c8657633)
