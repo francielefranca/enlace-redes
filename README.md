@@ -5,25 +5,39 @@
 - Este projeto foi criado em python, com o framework django, html e css.
 
 ## o que você encontra nesse projeto:
-- simulador de enlace de dados
-- ospf
+- [x] simulador de enlace de dados
+- [x] ospf
 
 ## como executar o projeto:
 1. Crie uma pasta no seu computador.
 2. Abra o terminal nesta pasta e execute o seguinte comando, para criação do ambiente virtual do python:
-   ```python -m venv venv```
-3. Em seguida, ative o ambiente virtual com:
-   ```.\venv\Scripts\activate```
-4. Altere os arquivos com endereços locais (caminhos onde estão as imagens), arquivos que precisam ser alterados:
-* ospf.py
-* resultado_ospf.html
-* contato.html
-5. Entre na pasta que contém um arquivo chamado 'manage.py'
-6. Logo após, você poderá rodar o projeto com o comando:
-  ```python manage.py runserver```
-7. Clique na url local. A página será aberta em seu navegador padrão.
+   ```
+      python -m venv venv
+   ```
+4. Em seguida, ative o ambiente virtual com:
+   ```
+      .\venv\Scripts\activate
+   ```
+6. Altere os arquivos com endereços locais (caminhos onde estão as imagens), arquivos que precisam ser alterados:
+   ```
+     ospf.py
+     resultado_ospf.html
+     contato.html
+   ```
+5. Innstale as bibliotecas que serão necessárias para rodar o projeto:
+  ```
+     pip install django
+     pip install matplotlib
+     pip install networkx
+  ```
+6. Entre na pasta que contém um arquivo chamado 'manage.py'
+7. Logo após, você poderá rodar o projeto com o comando:
+   ```
+     python manage.py runserver
+   ```
+8. Clique na url local. A página será aberta em seu navegador padrão.
 
-**SE DIVIRTA!**
+***SE DIVIRTA!***
 
 ## telas
 ![Captura de tela 2024-03-03 223226](https://github.com/francielefranca/enlace-redes/assets/92552849/7768f65f-0cb5-4e41-9d99-9c08c8657633)
