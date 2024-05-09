@@ -3,23 +3,9 @@ import matplotlib.pyplot as plt
 import random
 import time
 
-class Enlace:
-    def __init__(self):
-        self.colisoes = set()
-
-    def verificar_colisao(self, link_id):
-        return link_id in self.colisoes
-
-    def adicionar_colisao(self, link_id):
-        self.colisoes.add(link_id)
-
-    def limpar_colisoes(self):
-        self.colisoes.clear()
-
 class NetworkAnalyzer:
     def __init__(self):
         self.graph = nx.Graph()  # Crie um grafo vazio
-        self.enlace = Enlace()
 
     def add_router(self, router_name):
         self.graph.add_node(router_name)  # Adicione um nó ao grafo
@@ -28,24 +14,7 @@ class NetworkAnalyzer:
         self.graph.add_edge(router1, router2, link_id=link_id, taxa_transmissao=taxa_transmissao, tamanho_max_quadro=tamanho_max_quadro, latencia=latencia, custo=custo)
 
     def transmitir_quadro(self, link_id, quadro):
-        if self.enlace.verificar_colisao(link_id):
-            print(f"Colisão detectada no link {link_id}. Retransmitindo quadro...")
-            self.enlace.limpar_colisoes()
-            self.transmitir_quadro(link_id, quadro)
-        else:
-            print(f"Transmitindo quadro {quadro} pelo link {link_id}")
-            self.enlace.limpar_colisoes()
-
-    def simular_colisao(self, link_id):
-        if random.random() < 0.5:  # Simula 50% de chance de colisão
-            print(f"Colisão detectada no link {link_id}")
-            self.enlace.adicionar_colisao(link_id)
-
-    def simular_falha_link(self, link_id):
-        print(f"Falha detectada no link {link_id}. Removendo link...")
-        for edge in self.graph.edges():
-            if self.graph.edges[edge]['link_id'] == link_id:
-                self.graph.remove_edge(*edge)
+         print(f"Transmitindo quadro {quadro} pelo link {link_id}")
 
     def run_protocolo_roteamento(self, router_name):
         # Simula a troca de mensagens entre os roteadores para aprender sobre a topologia da rede
@@ -53,15 +22,6 @@ class NetworkAnalyzer:
             link_id = self.graph[router_name][neighbor]['link_id']
             latencia = self.graph[router_name][neighbor]['latencia']
             print(f"Roteador {router_name} aprendeu sobre o link {router_name}-{neighbor} (link_id: {link_id}, latência: {latencia})")
-
-    def csma_cd(self, link_id, quadro):
-        if self.enlace.verificar_colisao(link_id):
-            print(f"Colisão detectada no link {link_id}. Aguardando tempo aleatório para retransmitir...")
-            espera = random.uniform(0.1, 1.0)
-            time.sleep(espera)
-            self.transmitir_quadro(link_id, quadro)
-        else:
-            self.transmitir_quadro(link_id, quadro)
 
     def run_ospf(self):
         # Calcula as rotas mais curtas usando o algoritmo Dijkstra
@@ -123,9 +83,6 @@ if __name__ == "__main__":
     analyzer.add_link("RouterB", "RouterE", link_id=8, taxa_transmissao=2500, tamanho_max_quadro=2500, latencia=6, custo=1)
     analyzer.add_link("RouterC", "RouterD", link_id=9, taxa_transmissao=800, tamanho_max_quadro=1800, latencia=7, custo=3)
 
-    # Simula uma falha de link
-    analyzer.simular_falha_link(2)
-
     analyzer.run_ospf()
     analyzer.visualize_topology()
 
@@ -133,7 +90,4 @@ if __name__ == "__main__":
     for router_name in ["RouterA", "RouterB", "RouterC", "RouterD", "RouterE", "RouterF"]:
         analyzer.run_protocolo_roteamento(router_name)
 
-    # Simula a transmissão de quadros e a retransmissão em caso de colisão
-    for link_id in range(1, 7):
-        analyzer.csma_cd(link_id, f"Quadro {link_id}")
 '''
