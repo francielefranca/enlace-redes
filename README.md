@@ -9,8 +9,9 @@
 - [x] ospf
 
 ## modificações necessárias para fazer:
-- [ ] retirar simulacao de colisoes
+- [x] retirar simulacao de colisoes
 - [ ] adicionar campo de tipo no simulador de enlace
+- [ ] encontrar outra solucao para o calculo de crc, solucao presente esta incorreta
 
 ## como executar o projeto:
 1. Crie uma pasta no seu computador.
