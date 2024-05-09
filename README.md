@@ -8,6 +8,10 @@
 - [x] simulador de enlace de dados
 - [x] ospf
 
+## modificações necessárias para fazer:
+- [ ] retirar simulacao de colisoes
+- [ ] adicionar campo de tipo no simulador de enlace
+
 ## como executar o projeto:
 1. Crie uma pasta no seu computador.
 2. Abra o terminal nesta pasta e execute o seguinte comando, para criação do ambiente virtual do python:
