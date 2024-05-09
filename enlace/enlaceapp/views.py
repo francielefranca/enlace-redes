@@ -80,9 +80,6 @@ def resultado_ospf(request):
     analyzer.add_link("RouterB", "RouterE", link_id=8, taxa_transmissao=2500, tamanho_max_quadro=2500, latencia=6, custo=1)
     analyzer.add_link("RouterC", "RouterD", link_id=9, taxa_transmissao=800, tamanho_max_quadro=1800, latencia=7, custo=3)
 
-    # Simula uma falha de link
-    analyzer.simular_falha_link(2)
-
     # Execute o OSPF e coleta a saída
     ospf_output = analyzer.run_ospf()
     #graph_min = ospf_output.savefig("C:/Users/franc/OneDrive/Área de Trabalho/enlace-redes/enlace/static/enlaceapp/images/graph_min.png")
@@ -102,22 +99,13 @@ def resultado_ospf(request):
         output = analyzer.run_protocolo_roteamento(router_name)
         protocol_output.append(output)
 
-    # Lista para armazenar a saída da simulação de transmissão de quadros
-    transmission_output = []
-
-    # Simula a transmissão de quadros e a retransmissão em caso de colisão
-    for link_id in range(1, 7):
-        output = analyzer.csma_cd(link_id, f"Quadro {link_id}")
-        transmission_output.append(output)
 
     print("saida po",protocol_output)
-    print("saida to",transmission_output)
 
     context = {}
     context['graph_min'] = ospf_output
     context['graph_complet'] = graph_output
     context['protocol_output'] = protocol_output
-    context['transmission_output'] = transmission_output
 
     # Renderiza o template com as saídas coletadas
     return render(request, 'enlaceapp/resultado_ospf.html', context)
