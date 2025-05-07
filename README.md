@@ -45,8 +45,6 @@
 ***SE DIVIRTA!***
 
 ## telas
-![Captura de tela 2024-03-03 223226](https://github.com/francielefranca/enlace-redes/assets/92552849/7768f65f-0cb5-4e41-9d99-9c08c8657633)
-![Captura de tela 2024-03-03 223651](https://github.com/francielefranca/enlace-redes/assets/92552849/4808ef28-3f74-4e3b-8af4-ecd2ea25bd7d)
 ![Captura de tela 2024-03-03 223857](https://github.com/francielefranca/enlace-redes/assets/92552849/8f7b58bc-202f-4579-8acf-08ce930537eb)
 ![Captura de tela 2024-03-03 224036](https://github.com/francielefranca/enlace-redes/assets/92552849/9e09b6bb-1f29-4840-8ce1-3682686c8532)
 ![Captura de tela 2024-03-03 224122](https://github.com/francielefranca/enlace-redes/assets/92552849/b783c9a1-ca74-42d6-a56c-ad51281d1d5a)
